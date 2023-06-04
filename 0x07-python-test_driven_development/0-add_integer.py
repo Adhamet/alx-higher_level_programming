@@ -3,6 +3,7 @@
 This module has the function add_integer
 '''
 
+
 def add_integer(a, b=98):
     '''returns the addition of a & b'''
     message1 = None
@@ -13,7 +14,7 @@ def add_integer(a, b=98):
         message2 = "b"
 
     for message in [message1, message2]:
-        if message != None:
+        if message is not None:
             raise TypeError(message + " must be an integer")
 
     a, b = int(a), int(b)
