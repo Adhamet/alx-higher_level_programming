@@ -1,0 +1,45 @@
+doctest for 3-say_my_name.py
+============================
+
+importing function
+        >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+checking for module docstring:
+        >>> m = __import__("3-say_my_name").__doc__
+        >>> len(m) > 1
+        True
+
+checking for function docstring:
+        >>> f = __import__("3-say_my_name").say_my_name.__doc__
+        >>> len(f) > 1
+        True
+
+test normal function
+        >>> say_my_name("Adham", "Essam")
+        My name is Adham Essam
+        >>> say_my_name("Adham")
+        My name is Adham 
+
+test none as first name
+    >>> say_my_name(None, "Adham")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+test none as last name
+    >>> say_my_name("Adham", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+test wrong type as first name:
+    >>> say_my_name(12, "Adham")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+test wrong type as last name:
+    >>> say_my_name("Adham", 12)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string

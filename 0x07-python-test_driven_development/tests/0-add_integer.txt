@@ -4,6 +4,16 @@ test cases for add_integer
 import the function
         >>> add_integer = __import__("0-add_integer").add_integer
 
+checking for module docstring:
+        >>> m = __import__("0-add_integer").__doc__
+        >>> len(m) > 1
+        True
+
+checking for function docstring:
+        >>> f = __import__("0-add_integer").add_integer.__doc__
+        >>> len(f) > 1
+        True
+
 test addition
         >>> add_integer(2, 3)
         5
