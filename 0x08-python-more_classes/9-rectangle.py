@@ -4,7 +4,7 @@
 
 class Rectangle:
     """
-    Class that defines properties of rectangle by: (based on 6-rectangle.py).
+    Class that defines properties of rectangle by: (based on 8-rectangle.py).
 
     Attributes:
         width (int): width of the rectangle.
@@ -21,9 +21,9 @@ class Rectangle:
             width (int, optional): width of rectangle. Defaults to 0.
             height (int, optional): height of rectangle. Defaults to 0.
         """
-        self.height = height
-        self.width = width
         type(self).number_of_instances += 1
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -98,6 +98,19 @@ class Rectangle:
         else:
             return 2 * (self.__height + self.__width)
 
+    @classmethod
+    def square(cls, size=0):
+        """Returns a new rectangle instance with width == height == size.
+
+        Args:
+            cls: used to access class attributes.
+            size (int, optional): size of rectangle (1 side). Defaults to 0.
+
+        Returns:
+            Square: the new rectangle with equal values of height and width .
+        """
+        return Rectangle(size, size)
+
     def __str__(self):
         """Prints the rectangle with the character # .
 
@@ -130,5 +143,31 @@ class Rectangle:
     def __del__(self):
         """Deletes an instance of a class
         """
-        print("{:s}".format("Bye rectangle..."))
         type(self).number_of_instances -= 1
+        print("{:s}".format("Bye rectangle..."))
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Computes the area of two rectangles and compares them.
+
+        Args:
+            rect_1 (Rectangle): first rectangle.
+            rect_2 (Rectangle): second rectangle.
+
+        Returns:
+            Rectangle: the rectangle with the biggest area else rect_1 if
+            areas are equal
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        area_1 = rect_1.area()
+        area_2 = rect_2.area()
+
+        if area_1 >= area_2:
+            return rect_1
+
+        return rect_2
