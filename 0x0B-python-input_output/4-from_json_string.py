@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""to_json_string function"""
+"""from_json_string function"""
 
 
-def to_json_string(my_obj):
-    """converts `my_obj` python object into a json string"""
+def from_json_string(my_str):
+    """converts `my_str` json string into a python object"""
     import json
-    return json.dumps(my_obj)
+    return json.loads(my_str)
