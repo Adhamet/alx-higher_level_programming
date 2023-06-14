@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""append_write function"""
+"""to_json_string function"""
 
 
-def append_write(filename="", text=""):
-    """append `text` contents into `filename` file"""
-    with open(filename, mode="a", encoding="UTF8") as file:
-        return file.write(text)
+def to_json_string(my_obj):
+    """converts `my_obj` python object into a json string"""
+    import json
+    return json.dumps(my_obj)
