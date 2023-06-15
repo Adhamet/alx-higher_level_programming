@@ -81,5 +81,12 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        s = ('#' * self.__width + '\n') * self.__height
+        s = '\n' * self.y + \
+            (' ' * self.x + '#' * self.__width + '\n') * self.__height
         print(s, end='')
+
+    def __str__(self):
+        '''Returns string info about this rectangle.'''
+        return '[{}] ({}) {}/{} - {}/{}'.\
+            format(type(self).__name__, self.id, self.x, self.y, self.width,
+                   self.height)
