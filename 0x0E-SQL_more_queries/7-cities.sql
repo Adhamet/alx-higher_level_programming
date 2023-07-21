@@ -1,5 +1,5 @@
 -- Creates database hbtn_0d_usa & table cities.
-CREATE database if NOT EXISTS `hbtn_0d_usa`;
+CREATE DATABASE if NOT EXISTS `hbtn_0d_usa`;
 CREATE TABLE if NOT EXISTS `hbtn_0d_usa`.`cities` ( 
     PRIMARY KEY(`id`),
     `id`       INT          unique    auto_generated,
