@@ -1,6 +1,6 @@
 -- Creates database hbtn_0d_usa & table cities.
-CREATE DATABASE IF NOT EXISTS `hbtn_0d_usa`;
-CREATE TABLE IF NOT EXISTS `hbtn_0d_usa`.`cities` ( 
+CREATE DATABASE if NOT EXISTS `hbtn_0d_usa`;
+CREATE TABLE if NOT EXISTS `hbtn_0d_usa`.`cities` ( 
     PRIMARY KEY(`id`),
     `id`       INT          unique    auto_generated,
     `state_id` INT          not NULL,
