@@ -1,8 +1,5 @@
 #!/usr/bin/node
-const newArgs = process.argv.slice(2);
-if (isNaN(newArgs[0]) === false) {
-  const n = parseInt(newArgs[0]);
-  console.log('My number: ' + n);
-} else {
-  console.log('Not a number');
+const myArr = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+for (let i = 0; i < myArr.length; i++) {
+  console.log(myArr[i]);
 }
