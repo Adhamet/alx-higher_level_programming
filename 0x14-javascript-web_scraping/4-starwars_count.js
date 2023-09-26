@@ -11,7 +11,9 @@ request(url, function (err, data, body) {
     for (let result = 0; result < films.length; result++) {
       const characters = films[result].characters;
       for (let j = 0; j < characters.length; j++) {
-        if (characters[j] === 'https://swapi-api.hbtn.io/api/people/18/') { counter += 1; }
+        if (characters[j] === 'https://swapi-api.hbtn.io/api/people/18/' || characters[j] === 'https://swapi-api.hbtn.io/api/people/18/') {
+          counter += 1;
+        }
       }
     }
     console.log(counter);
